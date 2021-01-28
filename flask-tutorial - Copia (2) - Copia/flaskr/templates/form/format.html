@@ -1,0 +1,51 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Site Page</h1>
+  <p>Sito di sperimentazioni varie </p>
+   
+</div>
+
+<form action="http://127.0.0.1:5000/form/riceviform" method="POST"  >
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" >
+    
+<input type="submit" value="Submit">
+</form>
+
+<form action="http://127.0.0.1:5000/form/lanciaForm"   method="POST" name="myForm">
+        <p><label for="first_name">First Name:</label>
+        <input type="text" name="fname2" id="fname2"></p>
+
+        <p><label for="last_name">Last Name:</label>
+        <input type="text" name="lname2" id="lname2"></p>
+
+        <input value="Submit" type="submit">
+    </form>
+
+
+
+
+
+
+
+
+</body>
+</html>

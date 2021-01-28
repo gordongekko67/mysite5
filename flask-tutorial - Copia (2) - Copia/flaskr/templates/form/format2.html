@@ -1,0 +1,77 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Format2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Site Page Format2  </h1>
+  <p>Sito di sperimentazioni varie </p>
+   
+</div>
+
+<h3>I like the animal: {{ value1 }}<h3>
+<h3>I like the animal: {{ value2 }}<h3>
+<h3>I like the animal: {{ value3 }}<h3>
+
+<form action="http://127.0.0.1:5000/form/riceviform" method="POST"  >
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" >
+    
+<input type="submit" value="Submit">
+</form>
+
+<form action="http://127.0.0.1:5000/form/riceviform2"   method="POST" name="myForm">
+        <p><label for="first_name">First name:</label>
+        <input type="text" name="name[first]" id="fname2"  value={{ value1 }}   ></p>
+
+        <p><label for="last_name">Last name :</label>
+        <input type="text" name="name[last]" id="lname2"   value={{ value2 }}   ></p>
+
+        <input value="Submit" type="submit">
+    </form>
+
+    <div>
+        <h2>Questa e' la testata</h2>
+
+    </div>
+
+
+{% block content %}
+  {% for post2 in value5 %}
+    <article class="post">
+      <header>
+        <div>
+          <div class="about">{{ post2['id'] }}</div>
+          <div class="about">{{ post2['title'] }}</div>
+          <div class="about">{{ post2['autor'] }}</div>
+          <a class="action" href="{{ url_for('form.lanciacorr', id=post2['id'], title=post2['title'], autor = post2['autor'])}}">Edit</a>
+        </div>
+
+  {% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
